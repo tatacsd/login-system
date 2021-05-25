@@ -19,6 +19,15 @@
             <h1 class="text-center pb-5 display-4">
                 Login
             </h1>
+            <?php 
+                if(isset($_GET['error'])) { 
+            ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_GET['error']; ?>
+                </div>
+            <?php 
+                } 
+            ?>
             <div class="mb-3">
                 <label 
                     for="exampleInputEmail1" 
