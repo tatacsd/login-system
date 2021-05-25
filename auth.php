@@ -11,6 +11,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     } else if(empty($password)){
         header("Location: login.php?error=Password is required");
     } else {
+        // if there is an email and password
+        // the auth.php will open
         echo "Good!";
     }
 }
