@@ -13,7 +13,7 @@
     <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <form 
             class="p-5 rounded shadow" 
-            action=""
+            action="auth.php"
             method="post"
             style="width:30rem">
             <h1 class="text-center pb-5 display-4">
