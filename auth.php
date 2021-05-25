@@ -19,6 +19,25 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $stmt ->execute([$email]);
 
         if($stmt->rowCount() === 1){
+            $user = $stmt->fetch();
+
+            $user_id = $user['id'];
+            $user_email = $user['email'];
+            $user_password = $user['password'];
+            $user_full_name = $user['fullname'];
+
+            // Check if typed email is equal to user email
+            if($email === $user_email){
+                // Check password
+                if(password_verify($password, $user_password)){
+                    echo "Logddin";
+                } else{
+                    header("Location: login.php?error=Incorrect User or password"); 
+                }
+
+            } else{
+                header("Location: login.php?error=Incorrect User or password"); 
+            }
 
         } else {
             header("Location: login.php?error=Incorrect User or password");
