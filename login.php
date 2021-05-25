@@ -1,3 +1,11 @@
+<?php
+// hash the password
+$hashed_password = password_hash('12345', PASSWORD_DEFAULT);
+echo $hashed_password;
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -15,7 +15,14 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     } else {
         // if there is an email and password
         // the auth.php will open
-        echo "Good!";
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
+        $stmt ->execute([$email]);
+
+        if($stmt->rowCount() === 1){
+
+        } else {
+            header("Location: login.php?error=Incorrect User or password");
+        }
     }
 }
 ?>
