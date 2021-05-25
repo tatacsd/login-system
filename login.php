@@ -26,7 +26,8 @@
                     Email address
                 </label>
                 <input  
-                    type="email" 
+                    type="email"
+                    name="email" 
                     class="form-control" 
                     id="exampleInputEmail1" 
                     aria-describedby="emailHelp"
@@ -40,6 +41,7 @@
                 </label>
                 <input 
                     type="password" 
+                    name="password"
                     class="form-control" 
                     id="exampleInputPassword1"
                 >
