@@ -1,5 +1,7 @@
 <?php
 
+include "database_connection.php";
+
 // check if the field exist
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
