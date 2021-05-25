@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 include "database_connection.php";
 
 // check if the field exist
@@ -30,7 +31,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             if($email === $user_email){
                 // Check password
                 if(password_verify($password, $user_password)){
-                    echo "Logddin";
+                    $_SESSION['user_id'] = $user_id;
+                    $_SESSION['user_email'] = $user_email;
+                    $_SESSION['user_fullname'] = $user_full_name;
+
+                    header("Location: index.php"); 
+
                 } else{
                     header("Location: login.php?error=Incorrect User or password"); 
                 }
